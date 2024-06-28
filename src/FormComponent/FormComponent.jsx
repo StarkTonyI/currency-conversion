@@ -4,6 +4,8 @@ import CounterStore from '../CounterForm/Counter';
 import './FormComponentStyle.css'
 
 const FormComponent = observer(() => {
+  console.log(`${CounterStore.EuroBlock} - EURO`);
+  console.log(`${CounterStore.UsdBlock} - USD`)
   return (
     <div className='container'>
       <div className="form-control">
@@ -14,6 +16,7 @@ const FormComponent = observer(() => {
           type="text"
           onChange={(value) => CounterStore.euro(value.target.value)}
           placeholder={CounterStore.EuroCount}
+          disabled={CounterStore.EuroBlock}
         />
         <span className="input-border input-border-alt"></span>
       </div>
@@ -25,6 +28,7 @@ const FormComponent = observer(() => {
           type="text"
           onChange={(value) => CounterStore.usd(value.target.value)}
           placeholder={CounterStore.UsdCount}
+          disabled={CounterStore.UsdBlock}
         />
         <span className="input-border input-border-alt"></span>
       </div>
